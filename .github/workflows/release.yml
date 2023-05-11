@@ -37,8 +37,3 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           TURBO_TOKEN: PeBjUZYMjhAVo3e0fTntTXKx
           TURBO_TEAM: gabrieldesiderio
-
-      - name: Send a Slack notification if a publish happens
-        if: steps.changesets.outputs.published == 'true'
-        # You can do something when a publish happens.
-        run: my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
